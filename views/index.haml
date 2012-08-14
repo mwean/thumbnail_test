@@ -2,27 +2,18 @@
 %html
   %head
     %title Video Analytics
-    %link(rel="stylesheet" type="text/css" href="style.css")
+    %link(rel="stylesheet" type="text/css" href="/style.css")
     %script{src: "https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"}
-    %script{src: "app.js", type: "text/javascript"}
-    :javascript
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-31918753-1']);
-      _gaq.push(['_trackPageview']);
+    %script{src: "/app.js", type: "text/javascript"}
 
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
 
   %body
     #container
       #header
         %h1 Choose a Video!
-      %a{href: '#', id: @first}
-        %img.left{src: @first}
-      %a{href: '#', id: @second}
-        %img.middle{src: @second}
-      %a{href: '#', id: @third}
-        %img.right{src: @third}
+      %a{href: "/choose/#{@first}", id: @first}
+        %img.left{src: "/img/#{@first}.jpg"}
+      %a{href: "/choose/#{@second}", id: @second}
+        %img.middle{src: "/img/#{@second}.jpg"}
+      %a{href: "/choose/#{@third}", id: @third}
+        %img.right{src: "/img/#{@third}.jpg"}
